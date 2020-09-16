@@ -7,4 +7,6 @@
     android:background="@drawable/intro_background"
     tools:context=".view.activity.IntroActivity">
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
