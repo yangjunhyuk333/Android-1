@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HiSchool</string>
+    <string name="title_feed">피드</string>
+    <string name="title_search">검색</string>
+    <string name="title_notifications">알림</string>
+    <string name="title_question">질문</string>
+    <string name="title_profile">프로필</string>
+</resources>
