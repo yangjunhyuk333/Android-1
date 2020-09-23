@@ -11,6 +11,7 @@ import com.example.hischool.adapter.NotificationAdapt
 import com.example.hischool.data.NotificationRecyclerViewData
 import kotlinx.android.synthetic.main.fragment_notifications.*
 
+
 class NotificationsFragment : Fragment() {
 
     override fun onCreateView(
