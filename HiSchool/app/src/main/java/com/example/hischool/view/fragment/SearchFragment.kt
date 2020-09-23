@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.hischool.R
+import kotlinx.android.synthetic.main.search_item.*
 
 class SearchFragment : Fragment() {
 
@@ -20,7 +21,7 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        search_count_heart_text.text = "안녕"
     }
 
 
