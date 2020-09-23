@@ -75,8 +75,7 @@
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_search_edit"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/search_search_edit">
 
     </androidx.recyclerview.widget.RecyclerView>
 
