@@ -6,49 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".view.fragment.NotificationsFragment">
 
-    <TextView
-        android:id="@+id/notifications_school_name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="대구 소프트웨어 고등학교"
-        android:fontFamily="@font/nixgonfontsbold"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:background="@drawable/check_blue"
-        app:layout_constraintBottom_toBottomOf="@+id/notifications_school_name_text"
-        app:layout_constraintStart_toEndOf="@+id/notifications_school_name_text"
-        app:layout_constraintTop_toTopOf="@+id/notifications_school_name_text" />
-
-    <Button
-        android:id="@+id/notifications_setting_btn"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/setting"
-        app:layout_constraintBottom_toBottomOf="@+id/notifications_school_name_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/notifications_school_name_text" />
-
-    <View
-        android:id="@+id/notifications_bar_view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="20dp"
-        android:background="#CFCFCF"
-        app:layout_constraintTop_toBottomOf="@+id/notifications_school_name_text"
-        tools:layout_editor_absoluteX="10dp" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notification_recyclerview"
         android:layout_width="match_parent"
