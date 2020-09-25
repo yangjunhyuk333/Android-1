@@ -1,5 +1,6 @@
 package com.example.hischool.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
+import com.example.hischool.data.CommentRecyclerViewData
 import com.example.hischool.data.FeedRecyclerViewData
+import com.example.hischool.view.activity.CommentActivity
 
 class FeedAdapter(val feedList : ArrayList<FeedRecyclerViewData>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedAdapter.ViewHolder {
@@ -20,13 +23,7 @@ class FeedAdapter(val feedList : ArrayList<FeedRecyclerViewData>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: FeedAdapter.ViewHolder, position: Int) {
-        holder.profile.setImageResource(feedList.get(position).profile)
-        holder.nickname.text = feedList.get(position).nickname
-        holder.time.text = feedList.get(position).time
-        holder.title.text = feedList.get(position).title
-        holder.question.text = feedList.get(position).question
-        holder.count_heart.text = feedList.get(position).count_heart.toString()
-        holder.count_message.text = feedList.get(position).count_message.toString()
+        holder.bind(feedList[position])
     }
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -37,5 +34,20 @@ class FeedAdapter(val feedList : ArrayList<FeedRecyclerViewData>) : RecyclerView
         val question = itemView.findViewById<TextView>(R.id.feed_question_text)
         val count_heart = itemView.findViewById<TextView>(R.id.feed_count_heart_text)
         val count_message = itemView.findViewById<TextView>(R.id.feed_count_message_text)
+
+        fun bind(item : FeedRecyclerViewData)
+        {
+            profile.setImageResource(item.profile)
+            nickname.text = item.nickname
+            time.text = item.time
+            title.text = item.title
+            question.text = item.question
+            count_heart.text = item.count_heart.toString()
+            count_message.text = item.count_message.toString()
+
+            itemView.setOnClickListener {
+                itemView.context.startActivity(Intent(itemView.context, CommentActivity::class.java))
+            }
+        }
     }
 }
