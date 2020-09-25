@@ -1,6 +1,10 @@
 package com.example.hischool.view.activity
 
+import android.os.Build
 import android.os.Bundle
+import android.view.Window
+import android.widget.Toolbar
+import androidx.annotation.RequiresApi
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -11,18 +15,20 @@ import com.example.hischool.R
 
 class MainActivity : AppCompatActivity() {
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val actionbar = supportActionBar
+        actionbar?.hide()
+
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_feed, R.id.navigation_search, R.id.navigation_question, R.id.navigation_notifications, R.id.navigation_profile
-        ))
-        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 }
